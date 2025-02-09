@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+  <script>
+    function myFunction() {
+      const divElement = document.getElementById("myDiv");
+      if (divElement) { // Check if the element exists
+        divElement.innerHTML = "";
+        divElement.style.display = "none";
+        // Accessing the innerText property after the check
+        if(divElement.innerText){ //additional check for the innerText value
+          console.log(divElement.innerText); 
+        }
+      } else {
+        console.log("Element not found");
+      }
+    }
+  </script>
+</body>
+</html>
